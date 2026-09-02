@@ -7,4 +7,5 @@ To publish the site, upload this entire folder to a static website host. Keep th
 Files:
 - index.html: complete portable website, including styling and competency tabs
 - assets/iowa-cyp-logo.png: website logo
+- downloads/Christopher-Cox-One-Page-Interview-Handout.pdf: downloadable one-page interview handout
 - downloads/Chris-Cox-Competency-Portfolio-2026.pdf: downloadable competency binder
