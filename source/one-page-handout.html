@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Christopher J. Cox — One-Page Handout</title>
+<style>
+  @page { size: letter; margin: 0; }
+  :root{
+    --navy:#183a6b; --navy2:#102849; --red:#b23a48; --ink:#17223a;
+    --muted:#4d5a70; --paper:#fbfaf7; --line:#dce1e8; --soft:#eef2f6; --gold:#c49b45;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    width:8.5in;height:11in;
+    font-family:Arial,Helvetica,sans-serif;
+    color:var(--ink);
+    background:#fff;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .page{width:8.5in;height:11in;display:flex;flex-direction:column}
+  .topbar{height:6px;background:linear-gradient(90deg,var(--navy),var(--gold))}
+  .content{flex:1;padding:0.4in 0.55in 0.22in;display:flex;flex-direction:column;gap:0.13in}
+
+  .head{display:flex;justify-content:space-between;align-items:flex-start;gap:0.3in}
+  .head .eyebrow{color:var(--gold);font-size:9.5pt;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+  .head h1{font-family:Georgia,serif;font-size:29pt;margin:2px 0 4px;letter-spacing:-.02em;color:var(--ink)}
+  .head .tag{font-family:Georgia,serif;font-size:13pt;color:var(--navy);margin:0}
+  .contact{text-align:right;font-size:9pt;color:var(--muted);line-height:1.55;white-space:nowrap;padding-top:4px}
+  .contact strong{display:block;color:var(--ink);font-size:10pt}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--soft);border-radius:12px;overflow:hidden}
+  .stat{padding:0.18in 0.14in;border-right:1px solid var(--line);text-align:center;display:flex;flex-direction:column;justify-content:center;gap:3px}
+  .stat:last-child{border-right:0}
+  .stat strong{display:block;font-family:Georgia,serif;font-size:19pt;color:var(--navy)}
+  .stat span{font-size:8pt;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+
+  .section-label{font-size:9.5pt;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin:0 0 8px}
+
+  .lead-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:0.14in}
+  .lead-card{border:1px solid var(--line);border-radius:10px;padding:0.16in 0.14in;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px}
+  .lead-card b{display:block;font-family:Georgia,serif;font-size:11.5pt;color:var(--ink)}
+  .lead-card p{margin:0;font-size:8.3pt;color:var(--muted);line-height:1.4}
+
+  .savings{background:var(--navy);color:#fff;border-radius:14px;padding:0.2in 0.24in;display:flex;flex-direction:column;gap:0.12in}
+  .savings .section-label{color:var(--gold);margin:0}
+  .formula{display:flex;align-items:center;justify-content:center;gap:0.2in}
+  .formula div{text-align:center}
+  .formula strong{display:block;font-family:Georgia,serif;font-size:17pt}
+  .formula small{display:block;font-size:7.6pt;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:700}
+  .formula i{font-family:Georgia,serif;font-size:16pt;color:var(--gold);font-style:normal}
+  .savings p{margin:0;font-size:8.6pt;color:rgba(255,255,255,.88);line-height:1.45;text-align:center}
+
+  .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:0.14in}
+  .proof-card{background:var(--soft);border-radius:10px;padding:0.16in;text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px}
+  .proof-num{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--red);color:#fff;font-size:8pt;font-weight:800;margin-right:5px}
+  .proof-card .plabel{display:flex;align-items:center;justify-content:center;font-size:8pt;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+  .proof-card strong{display:block;font-family:Georgia,serif;font-size:15pt;color:var(--ink)}
+  .proof-card p{margin:0;font-size:8pt;color:var(--muted);line-height:1.4}
+
+  .role{border-top:1px solid var(--line);padding-top:0.15in}
+  .role-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+  .role-head b{font-family:Georgia,serif;font-size:12pt}
+  .role-head span{font-size:8pt;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+  .role ul{margin:0;padding-left:16px;font-size:8.6pt;color:var(--muted);line-height:1.55}
+  .role li{margin-bottom:3px}
+  .role li:last-child{margin-bottom:0}
+
+  .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:7px}
+  .chip{background:var(--soft);border-radius:999px;padding:4px 11px;font-size:8pt;font-weight:700;color:var(--ink)}
+
+  .comp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px 0.3in;font-size:8.4pt;color:var(--ink)}
+  .comp-grid div{display:flex;gap:6px;align-items:flex-start}
+  .comp-grid b{color:var(--red);font-family:monospace;font-weight:700;font-size:7.6pt;padding-top:1px}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:0.4in}
+
+  .footerbar{background:var(--navy2);color:#fff;padding:0.14in 0.55in;display:flex;justify-content:space-between;align-items:center;font-size:8.6pt}
+  .footerbar .ready{font-weight:800;color:var(--gold);text-transform:uppercase;font-size:8pt;letter-spacing:.08em;margin-bottom:2px}
+  .footerbar .quals{font-weight:700}
+  .footerbar .fc{text-align:right;line-height:1.5}
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar"></div>
+    <div class="content">
+
+      <div class="head">
+        <div>
+          <div class="eyebrow">Lead Program Coordinator · Iowa Army National Guard Child &amp; Youth Program</div>
+          <h1>Christopher J. Cox</h1>
+          <p class="tag">Programs built around the families that serve.</p>
+        </div>
+        <div class="contact">
+          <strong>Ankeny, Iowa</strong>
+          (913) 269-3015<br>
+          christopher.j.cox18.ctr@army.mil
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong>13</strong><span>Years leading CYP</span></div>
+        <div class="stat"><strong>1,237</strong><span>Youth reached, 2025</span></div>
+        <div class="stat"><strong>549</strong><span>Volunteer hours, 2025</span></div>
+        <div class="stat"><strong>$84.1K+</strong><span>Total program value</span></div>
+      </div>
+
+      <div>
+        <p class="section-label">How I lead</p>
+        <div class="lead-cards">
+          <div class="lead-card"><b>Plan</b><p>Purpose, schedule, roles, budget, and requirements.</p></div>
+          <div class="lead-card"><b>Coordinate</b><p>Staff, volunteers, partners, schools, and leaders.</p></div>
+          <div class="lead-card"><b>Deliver</b><p>Registration, communication, supplies, and locations.</p></div>
+          <div class="lead-card"><b>Learn</b><p>Attendance, surveys, feedback, and after-action notes.</p></div>
+        </div>
+      </div>
+
+      <div class="savings">
+        <p class="section-label">Program savings</p>
+        <div class="formula">
+          <div><strong>$30,000</strong><small>Program budget</small></div>
+          <i>+</i>
+          <div><strong>$54,100+</strong><small>Partner support</small></div>
+          <i>=</i>
+          <div><strong>$84,100+</strong><small>Total capacity</small></div>
+        </div>
+        <p>None of this came out of the program's own budget: partnerships brought in at least $54,100 in direct support, and building the website and RSVP tracker myself avoided another $570–$3,800 in vendor costs.</p>
+      </div>
+
+      <div class="proof">
+        <div class="proof-card"><span class="plabel"><span class="proof-num">1</span>Camp saved</span><strong>$50,000+</strong><p>Swingin' for Soldiers paid the camp directly, keeping it free for military families.</p></div>
+        <div class="proof-card"><span class="plabel"><span class="proof-num">2</span>Cost avoided</span><strong>$570–$3,800</strong><p>Built the program website and RSVP tracker myself — no developer or new platform needed.</p></div>
+        <div class="proof-card"><span class="plabel"><span class="proof-num">3</span>Statewide reach</span><strong>6 regions</strong><p>Program delivery and family connections across Iowa.</p></div>
+      </div>
+
+      <div class="role">
+        <div class="role-head"><b>Lead Program Coordinator</b><span>August 2013 – Present</span></div>
+        <ul>
+          <li>Lead statewide programs and signature events, including the Military Family Ball, Summer Camp, and Fall Family Festival.</li>
+          <li>Coordinate staff, volunteers, partners, logistics, registration, communications, and resources across locations.</li>
+          <li>Manage program funds carefully, keeping documentation audit-ready while putting family needs first.</li>
+        </ul>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <p class="section-label">Core strengths</p>
+          <div class="chips">
+            <span class="chip">Statewide leadership</span><span class="chip">Program planning</span>
+            <span class="chip">Budget stewardship</span><span class="chip">Compliance</span>
+            <span class="chip">Staff &amp; volunteers</span><span class="chip">Partnerships</span>
+            <span class="chip">Education liaison</span><span class="chip">Purple Star</span>
+          </div>
+        </div>
+        <div>
+          <p class="section-label">Eleven competency areas</p>
+          <div class="comp-grid">
+            <div><b>01</b>Program Planning &amp; Management</div>
+            <div><b>02</b>Youth Growth &amp; Resiliency</div>
+            <div><b>03</b>Community &amp; Education Outreach</div>
+            <div><b>04</b>Collaborative Partnerships</div>
+            <div><b>05</b>Volunteer Recruitment &amp; Retention</div>
+            <div><b>06</b>Effective Marketing Plans</div>
+            <div><b>07</b>Growth Through Local Initiatives</div>
+            <div><b>08</b>Working Within the ARNG Community</div>
+            <div><b>09</b>Soldier Readiness &amp; Retention</div>
+            <div><b>10</b>Deliverable Submission</div>
+            <div><b>11</b>Professional Growth &amp; Development</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footerbar">
+      <div>
+        <div class="ready">Ready on day one</div>
+        <div class="quals">13 years of Iowa Guard family experience · Statewide relationships · Budget-to-after-action execution</div>
+      </div>
+      <div class="fc">Full competency portfolio and resume available on request</div>
+    </div>
+  </div>
+</body>
+</html>
