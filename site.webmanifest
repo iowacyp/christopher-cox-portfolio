@@ -2,7 +2,7 @@
   "name": "Christopher J. Cox Program Leadership Portfolio",
   "short_name": "Cox Portfolio",
   "description": "Program leadership portfolio, resume, and competency evidence for Christopher J. Cox.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#fbfaf7",
   "theme_color": "#183a6b",
