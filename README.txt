@@ -13,4 +13,6 @@ Files:
 - downloads/Chris-Cox-Competency-Portfolio-2026.pdf: downloadable competency binder
 - downloads/Iowa-CYP-Executive-Data-Brief-FY26-2026-09-16.pdf: one-page FY26 program data brief current through September 16, 2026
 - downloads/Iowa-CYP-Program-and-Social-Media-Trends-FY26-2026-09-16.pdf: detailed FY20-FY26 program and Facebook trends report current through September 16, 2026
+- downloads/Iowa-CYP-Executive-Data-Brief-FY26-2026-09-21.pdf: corrected one-page FY26 program data brief using the September 21, 2026 database pull
+- downloads/Iowa-CYP-Program-and-Social-Media-Trends-FY26-2026-09-21.pdf: corrected FY20-FY26 youth attendance and Facebook trends report using the September 21, 2026 database pull
 - source/one-page-handout.html: editable source for the one-page handout (fixed 8.5x11in, print/PDF only, not linked from the site). Open in a browser and print to PDF (or re-render with a headless browser) after editing, then replace the file in downloads/.
